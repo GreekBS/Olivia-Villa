@@ -10,9 +10,9 @@ export const ESTATE_COPY = {
   title: "Architecture with intention",
   body: "Four private suites, a heated pool, and terraces wrapped in stillness. Modern lines meet Mediterranean light — a house built for unhurried days.",
   highlights: [
-    { value: "200", label: "Square metres" },
+    { value: "210", label: "Square metres" },
     { value: "4", label: "Suites" },
-    { value: "4", label: "Bathrooms" },
+    { value: "3", label: "Bathrooms" },
     { value: "8", label: "Guests" },
   ],
 } as const;
