@@ -29,6 +29,17 @@ export const RESTAURANTS = [
       "https://www.google.com/maps/search/?api=1&query=Mikro+Nisi+Corfu+Ag+Gordios+Lefkimmi+490+80",
   },
   {
+    name: "Cosy",
+    tag: "finger food",
+    context: "~14 km · ~18 min drive",
+    description:
+      "A relaxed finger food spot in Agios Georgios offering casual bites, fresh flavors, and a laid-back island vibe perfect for light dining.",
+    slug: "cosy",
+    image: "/images/destinations/restaurants/cosy.jpg",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Cosy+Ag+Georgios+490+80+Corfu",
+  },
+  {
     name: "Etrusco",
     tag: "gourmet Corfiot cuisine in an intimate setting",
     context: "~8 km · ~10 min drive",

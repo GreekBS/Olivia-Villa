@@ -33,6 +33,7 @@ const RESTAURANT_COORDINATES: Record<
   "kaiser-bridge-restaurant": { lat: 39.5612, lng: 19.912 },
   "akrogiali-taverna": { lat: 39.4672, lng: 20.0694 },
   "mikro-nisi": { lat: 39.54613, lng: 19.849832 },
+  cosy: { lat: 39.5482, lng: 19.8515 },
 };
 
 const BEACH_COORDINATES: Record<
