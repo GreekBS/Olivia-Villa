@@ -17,6 +17,14 @@ export function SiteHeader() {
   const onHero = !scrolledPastHero;
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
+  const scrollToBooking = useCallback(() => {
+    closeMenu();
+    window.setTimeout(() => {
+      document
+        .getElementById("booking-section")
+        ?.scrollIntoView({ behavior: "smooth" });
+    }, 0);
+  }, [closeMenu]);
   const menuRef = useFocusTrap(menuOpen);
 
   useLockBodyScroll(menuOpen);
@@ -117,6 +125,13 @@ export function SiteHeader() {
                 {link.label}
               </NavLink>
             ))}
+            <button
+              type="button"
+              className="font-display text-3xl font-light text-charcoal text-left md:hidden"
+              onClick={scrollToBooking}
+            >
+              Book
+            </button>
           </nav>
         </div>
         <div className="border-t border-charcoal/8 px-6 py-8 pb-[max(2rem,env(safe-area-inset-bottom))]">

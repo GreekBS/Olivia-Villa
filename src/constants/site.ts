@@ -55,7 +55,7 @@ export const SECTION_IDS = {
   whyChoose: "why-choose",
   guestInfo: "guest-info",
   faq: "faq",
-  book: "book",
+  book: "booking-section",
 } as const;
 
 export const NAV_LINKS = [

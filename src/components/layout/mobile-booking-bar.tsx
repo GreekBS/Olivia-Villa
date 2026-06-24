@@ -12,7 +12,7 @@ export function MobileBookingBar() {
   const visible = scrolledPastHero && !nearBook;
 
   useEffect(() => {
-    const bookSection = document.getElementById("book");
+    const bookSection = document.getElementById("booking-section");
     if (!bookSection) return;
 
     const observer = new IntersectionObserver(
