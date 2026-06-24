@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import { AppProviders } from "@/components/providers/app-providers";
 import { JsonLd } from "@/components/layout/json-ld";
 import { SiteHeader } from "@/components/layout/site-header";
+import { FloatingCarRentalButton } from "@/components/layout/floating-car-rental-button";
 import { SkipLink } from "@/components/layout/skip-link";
 import { rootMetadata } from "@/lib/metadata";
 import "./globals.css";
@@ -43,6 +44,7 @@ export default function RootLayout({
           <SkipLink />
           <SiteHeader />
           <main id="main-content">{children}</main>
+          <FloatingCarRentalButton />
         </AppProviders>
       </body>
     </html>
