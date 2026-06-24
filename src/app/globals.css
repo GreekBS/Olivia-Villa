@@ -1,26 +1,285 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  --color-alabaster: #f7f5f0;
+  --color-stone: #e8e4dc;
+  --color-charcoal: #2a2a2a;
+  --color-obsidian: #1a1a1a;
+  --color-amber: #c9a96e;
+  --color-ring: var(--ring);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+  --radius-xl: 4px;
+  --ease-elysion: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --animate-hero-reveal: hero-reveal 1.6s var(--ease-elysion) forwards;
+  --animate-hero-image: hero-image 1.6s var(--ease-elysion) forwards;
+  --animate-hero-content: hero-content 1s var(--ease-elysion) 0.6s forwards;
+  --animate-scroll-hint: scroll-hint 0.8s var(--ease-elysion) 1.2s forwards;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #f7f5f0;
+  --foreground: #2a2a2a;
+  --primary: #2a2a2a;
+  --primary-foreground: #f7f5f0;
+  --muted: #e8e4dc;
+  --muted-foreground: #5c5c5c;
+  --accent: #c9a96e;
+  --border: rgb(42 42 42 / 8%);
+  --ring: #c9a96e;
+  --radius: 2px;
+}
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0.85;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes hero-image {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1);
+  }
 }
+
+@keyframes hero-content {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-hint {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes hero-reveal {
+    from {
+      filter: blur(4px);
+      opacity: 0.9;
+    }
+    to {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+    scroll-behavior: auto;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    @apply bg-alabaster text-charcoal antialiased;
+  }
+
+  ::selection {
+    background-color: rgb(201 169 110 / 20%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-reveal,
+  .animate-hero-image,
+  .animate-hero-content,
+  .animate-scroll-hint {
+    animation: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Initial state for CSS entrance animations */
+.animate-hero-content,
+.animate-scroll-hint {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-content,
+  .animate-scroll-hint {
+    opacity: 1;
+  }
+}
+
+/* Corfu location map — editorial Leaflet */
+.corfu-map .leaflet-container {
+  background: #c5d9e8;
+}
+
+.corfu-map .leaflet-tile-pane {
+  filter: saturate(1.1) contrast(0.9) brightness(1.03);
+}
+
+.corfu-map .leaflet-control-attribution {
+  font-family: var(--font-sans);
+  font-size: 7px;
+  letter-spacing: 0.03em;
+  color: rgba(42, 42, 42, 0.32);
+  background: transparent;
+  padding: 1px 3px;
+}
+
+.corfu-map .leaflet-control-attribution a {
+  color: rgba(42, 42, 42, 0.38);
+}
+
+.map-poi-pin-wrapper,
+.villa-map-pin-wrapper {
+  background: transparent;
+  border: none;
+}
+
+.map-poi-pin,
+.villa-map-pin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-poi-pin__head,
+.villa-map-pin__head {
+  display: block;
+  border-radius: 9999px;
+  border: 2px solid #f7f5f0;
+  box-shadow:
+    0 1px 3px rgba(26, 26, 26, 0.14),
+    0 0 0 0.5px rgba(26, 26, 26, 0.04);
+}
+
+.map-poi-pin--primary .map-poi-pin__head,
+.villa-map-pin--primary .map-poi-pin__head {
+  border-color: #f7f5f0;
+  box-shadow:
+    0 0 0 4px rgba(184, 115, 51, 0.14),
+    0 4px 16px rgba(184, 115, 51, 0.32),
+    0 2px 6px rgba(26, 26, 26, 0.16);
+}
+
+.map-poi-pin--hospital .map-poi-pin__head,
+.map-poi-pin--airport .map-poi-pin__head,
+.map-poi-pin--port .map-poi-pin__head {
+  opacity: 0.92;
+}
+
+.map-poi-pin__stem,
+.villa-map-pin__stem {
+  display: block;
+  width: 1px;
+  background: rgba(42, 42, 42, 0.35);
+}
+
+.corfu-map .map-poi-popup-wrapper .leaflet-popup-content-wrapper {
+  font-family: var(--font-sans);
+  background: rgba(247, 245, 240, 0.98);
+  border-radius: 1px;
+  padding: 0;
+  box-shadow: none;
+}
+
+.corfu-map .map-poi-popup-wrapper .leaflet-popup-content {
+  margin: 8px 10px 8px 10px;
+  line-height: 1.35;
+}
+
+.corfu-map .map-poi-popup-wrapper .leaflet-popup-tip-container {
+  display: none;
+}
+
+.corfu-map .map-poi-popup-wrapper .leaflet-popup-close-button {
+  top: 4px;
+  right: 6px;
+  width: 16px;
+  height: 16px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+  color: rgba(42, 42, 42, 0.35);
+}
+
+.corfu-map .map-poi-popup-wrapper .leaflet-popup-close-button:hover {
+  color: rgba(42, 42, 42, 0.6);
+}
+
+.map-poi-popup__name {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: #2a2a2a;
+}
+
+.map-poi-popup__desc {
+  margin-top: 2px;
+  font-size: 10px;
+  line-height: 1.4;
+  color: rgba(42, 42, 42, 0.5);
+}
+
+.map-cluster-wrapper {
+  background: transparent;
+  border: none;
+}
+
+.map-cluster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: rgba(42, 42, 42, 0.55);
+  background: rgba(247, 245, 240, 0.88);
+  border: 1px solid rgba(42, 42, 42, 0.08);
+  box-shadow: none;
+}
+
