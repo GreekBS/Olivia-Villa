@@ -23,7 +23,7 @@ export function SiteHeader() {
       document
         .getElementById("booking-section")
         ?.scrollIntoView({ behavior: "smooth" });
-    }, 0);
+    }, 50);
   }, [closeMenu]);
   const menuRef = useFocusTrap(menuOpen);
 
@@ -107,13 +107,26 @@ export function SiteHeader() {
         aria-modal="true"
         aria-label="Navigation menu"
         className={cn(
-          "fixed inset-0 z-[200] flex flex-col bg-alabaster transition-opacity duration-[400ms] ease-elysion lg:hidden",
+          "fixed inset-0 z-[200] flex h-dvh max-h-dvh flex-col overflow-y-auto overscroll-y-contain bg-alabaster transition-opacity duration-[400ms] ease-elysion lg:hidden",
           menuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
         )}
         aria-hidden={!menuOpen}
         inert={!menuOpen ? true : undefined}
       >
-        <div className="flex flex-1 flex-col justify-center px-6 pb-32 pt-24">
+        <button
+          type="button"
+          className={cn(
+            "absolute right-6 top-6 z-10 flex h-12 w-12 items-center justify-center text-charcoal",
+            "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber",
+          )}
+          onClick={closeMenu}
+          aria-label="Close menu"
+        >
+          <span aria-hidden="true" className="text-3xl font-light leading-none">
+            ×
+          </span>
+        </button>
+        <div className="px-6 pb-10 pt-24">
           <nav aria-label="Mobile primary" className="flex flex-col gap-10">
             {NAV_LINKS.map((link) => (
               <NavLink
@@ -134,7 +147,7 @@ export function SiteHeader() {
             </button>
           </nav>
         </div>
-        <div className="border-t border-charcoal/8 px-6 py-8 pb-[max(2rem,env(safe-area-inset-bottom))]">
+        <div className="shrink-0 border-t border-charcoal/8 px-6 py-8 pb-[max(2rem,env(safe-area-inset-bottom))]">
           <TextLink href={WHATSAPP_BOOKING_URL} external onClick={closeMenu}>
             Book Your Stay
           </TextLink>
