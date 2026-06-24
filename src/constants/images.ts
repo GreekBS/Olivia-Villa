@@ -96,7 +96,7 @@ export const IMAGES = {
     height: 1280,
   },
   marbleBathroom: {
-    src: "/images/image00046.jpeg",
+    src: "/images/image00021.jpeg",
     alt: "Marble ensuite bathroom with walk-in shower and floating vanity",
     caption: "Marble & Light",
     focalPoint: { x: 50, y: 50 },
@@ -123,7 +123,7 @@ export const IMAGES = {
     height: 1280,
   },
   bedroomSea: {
-    src: "/images/image00008.png",
+    src: "/images/image00023.jpeg",
     alt: "Elegant bedroom with natural light and a glimpse of the sea beyond",
     caption: "The Light Suite",
     focalPoint: { x: 55, y: 45 },
