@@ -26,7 +26,7 @@ const RESTAURANT_COORDINATES: Record<
   { lat: number; lng: number }
 > = {
   etrusco: { lat: 39.689156, lng: 19.834635 },
-  avli: { lat: 39.610819, lng: 19.922695 },
+  "bella-vista-tavern": { lat: 39.3792, lng: 20.0936 },
   "taverna-agni": { lat: 39.736471, lng: 19.92923 },
   "rex-restaurant": { lat: 39.62444, lng: 19.923558 },
   "the-venetian-well": { lat: 39.626723, lng: 19.921772 },

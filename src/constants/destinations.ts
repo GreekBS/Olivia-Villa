@@ -35,7 +35,7 @@ export const RESTAURANTS = [
     description:
       "A relaxed finger food spot in Agios Georgios offering casual bites, fresh flavors, and a laid-back island vibe perfect for light dining.",
     slug: "cosy",
-    image: "/images/destinations/restaurants/cosy.jpg",
+    image: "/images/destinations/restaurants/unnamed.webp",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Cosy+Ag+Georgios+490+80+Corfu",
   },
@@ -49,13 +49,15 @@ export const RESTAURANTS = [
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Etrusco+Corfu",
   },
   {
-    name: "Avli",
-    tag: "modern Greek in a leafy courtyard",
-    context: "~10 km · ~12 min drive",
-    description: "Elegant courtyard dining with a contemporary Greek menu.",
-    slug: "avli",
-    image: "/images/destinations/restaurants/avli.jpg",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Avli+Corfu",
+    name: "Bella Vista Tavern",
+    tag: "traditional Greek taverna with sea views",
+    context: "~4 km · ~6 min drive",
+    description:
+      "Bella Vista Tavern — traditional Greek taverna with sea views and authentic island cuisine.",
+    slug: "bella-vista-tavern",
+    image: "/images/destinations/restaurants/test.webp",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Bella+Vista+Tavern+Spartera+490+80",
   },
   {
     name: "Taverna Agni",
