@@ -32,6 +32,7 @@ const RESTAURANT_COORDINATES: Record<
   "the-venetian-well": { lat: 39.626723, lng: 19.921772 },
   "kaiser-bridge-restaurant": { lat: 39.5612, lng: 19.912 },
   "akrogiali-taverna": { lat: 39.4672, lng: 20.0694 },
+  "mikro-nisi": { lat: 39.54613, lng: 19.849832 },
 };
 
 const BEACH_COORDINATES: Record<

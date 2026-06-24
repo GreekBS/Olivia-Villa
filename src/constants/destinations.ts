@@ -80,6 +80,17 @@ export const RESTAURANTS = [
     image: "/images/destinations/restaurants/akrogiali-taverna.jpg",
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Akrogiali+Corfu",
   },
+  {
+    name: "Mikro Nisi",
+    tag: "seaside Greek cuisine with stunning sunset views",
+    context: "~14 km · ~18 min drive",
+    description:
+      "A beautiful seaside restaurant offering authentic Greek cuisine with stunning views, fresh local ingredients, and a relaxed island atmosphere perfect for sunset dining.",
+    slug: "mikro-nisi",
+    image: "/images/destinations/restaurants/mikronisi.jpeg",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Mikro+Nisi+Corfu+Ag+Gordios+Lefkimmi+490+80",
+  },
 ] as const satisfies readonly RestaurantItem[];
 
 export const BEACHES = [
