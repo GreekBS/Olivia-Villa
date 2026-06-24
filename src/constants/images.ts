@@ -20,8 +20,8 @@ export const IMAGES = {
     caption: "Twilight",
     focalPoint: { x: 50, y: 55 },
     objectPositionClass: "object-[50%_55%]",
-    width: 4032,
-    height: 2268,
+    width: 2048,
+    height: 1152,
   },
   heroPoolDusk: {
     src: "/images/image00011.png",
@@ -164,8 +164,8 @@ export const IMAGES = {
     caption: "Architecture",
     focalPoint: { x: 50, y: 55 },
     objectPositionClass: "object-[50%_55%]",
-    width: 1920,
-    height: 1280,
+    width: 2048,
+    height: 2731,
   },
   galleryImage15: {
     src: "/images/image15.jpeg",
@@ -173,8 +173,8 @@ export const IMAGES = {
     caption: "Light & Space",
     focalPoint: { x: 50, y: 50 },
     objectPositionClass: "object-center",
-    width: 1920,
-    height: 1280,
+    width: 2048,
+    height: 1152,
   },
   galleryImage17: {
     src: "/images/image17.jpeg",
@@ -182,8 +182,8 @@ export const IMAGES = {
     caption: "Detail",
     focalPoint: { x: 50, y: 50 },
     objectPositionClass: "object-center",
-    width: 1920,
-    height: 1280,
+    width: 2048,
+    height: 1152,
   },
   galleryImage012: {
     src: "/images/image012.jpeg",
@@ -191,8 +191,16 @@ export const IMAGES = {
     caption: "Craft",
     focalPoint: { x: 50, y: 50 },
     objectPositionClass: "object-center",
-    width: 1920,
-    height: 1280,
+    width: 2048,
+    height: 1152,
+  },
+  ogShare: {
+    src: "/images/og-share.jpg",
+    alt: "Olivia Luxury Villa at twilight — illuminated pool, modern white facade, and private terrace in Corfu, Greece",
+    width: 1200,
+    height: 630,
+    focalPoint: { x: 50, y: 55 },
+    objectPositionClass: "object-center",
   },
 } as const satisfies Record<string, VillaImage>;
 
@@ -212,7 +220,7 @@ export const GALLERY_IMAGES = [
   IMAGES.staircase,
 ] as const;
 
-export const OG_IMAGE = IMAGES.hero;
+export const OG_IMAGE = IMAGES.ogShare;
 
 /** Responsive object-position tuned to image00050 — pool foreground, villa right, sky left */
 export const HERO_IMAGE_POSITION =
